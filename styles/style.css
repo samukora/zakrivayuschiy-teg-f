@@ -13,4 +13,185 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--base-font-family), sans-serif;
+  font-variation-settings: 'wght' var(--base-font-weight, 715);
+  color: var(--font-color);
+  background-image: 
+    repeating-linear-gradient(
+      90deg, 
+      var(--background-title-color,#d3d3d3), 
+      var(--background-title-color,#d3d3d3), 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      var(--background-title-color,#d3d3d3), 
+      var(--background-title-color,#d3d3d3), 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      var(--background-grad-color-start,#E7E7E7) 0.01%, 
+      var(--background-grad-color-end,#1A1A1A) 100%
+    );
+  background-size: cover;
+  background-attachment: fixed;
+  padding-block: 100px;
+}
+
+.card {
+  inline-size: var(--card-inline-size);
+  max-inline-size: 700px;
+  background-color: var(--background-base-color);
+  margin: auto;
+  border: 2px solid #000;
+}
+
+.header {
+  padding-block-end: 98px;
+}
+
+.header__card {
+  font-family: var(--accent-font-family);
+  font-weight: 400;
+  text-align: center;
+  padding-inline: clamp(1rem, -1.3327rem + 9.9531vw, 7.625rem);
+  padding-block: clamp(7.625rem, 7.4489rem + 0.7512vw, 8.125rem);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: none;
+  outline: 2px solid #000;
+}
+
+.header__title-logo {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: 100%;
+  vertical-align: bottom;
+  text-transform: uppercase;
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: 100%;
+  vertical-align: bottom;
+  text-transform: uppercase;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/*TODO: наименование класса под вопросом*/
+
+.card__title {
+  font-family: var(--base-font-family), sans-serif;
+  font-variation-settings: "wght" var(--accent-font-weight, 715);
+  font-size: 18px;
+  line-height: 100%;
+  padding: 6px 10px;
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-position: center;
+  object-fit: cover;
+  outline: 2px solid #000;
+}
+
+.card__content {
+  position: relative;
+}
+
+.card__content::before {
+  content:'</html>';
+  position: absolute;
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+  text-transform: uppercase;
+  top: 26px;
+  right: 26px;
+  inline-size: 98px;
+  block-size: 14px;
+  text-shadow: 1px var(---text-stroke, #fff);
+  opacity: 50%;
+  mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 1px var(---text-stroke, #fff)) {
+  .card__content::before {
+    -webkit-text-stroke: 1px var(---text-stroke, #fff);
+  }
+}
+
+@supports (text-stroke: 1px var(---text-stroke, #fff)#fff) {
+  .card__content::before {
+    text-stroke: 1px var(---text-stroke, #fff);
+  }
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  font-variation-settings: "wght" var(--base-font-weight, 410);
+  padding: 25px 25px 20.5px 25px; /**Pixel Perfect*/
+  gap: 25px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.card__reaction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: end;
+  gap: 12px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.card__like-button {
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 90%;
+  border: 2px solid #000;
+  outline: none;
+  margin-top: -4px;  /**Pixel Perfect*/
+  padding: 10px 35px; /**Pixel Perfect*/
+  cursor: pointer;
+}
+
+
+
+/* TODO:2 следующих - хз? надо подумать*/
+
+.button__text {
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 90%;
+  text-align: center;
+}
+
+.save-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  inline-size: auto;
+  padding: 13px 20px; /**Pixel Perfect*/
+}
+
+.card:has(.save-button){
+  --card-inline-size: auto;
 }

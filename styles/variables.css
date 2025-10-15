@@ -3,16 +3,16 @@
   --base-font-family: 'Inter';
   --accent-font-family: 'PressStart2P';
   --font-color: #000;
-
   --base-font-weight: 410;
   --accent-font-weight: 715;
-
   --background-base-color: #fff;
   --background-title-color: #d3d3d3;
   --background-grad-color-start: #E7E7E7;
   --background-grad-color-end: #1A1A1A;
-
   --card-inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
-
   --text-stroke: #fff;
+  --accent-color: #000;
+  --heart-contour: #000;
+  --animation-fill-color: red;
+  --heart-sparks: red;
 }

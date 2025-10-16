@@ -43,7 +43,7 @@
 }
 
 .header__card {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), sans-serif;
   font-weight: 400;
   text-align: center;
   padding-inline: clamp(1rem, -1.3327rem + 9.9531vw, 7.625rem);
@@ -103,7 +103,7 @@
 .card__content::before {
   content: "</html>";
   position: absolute;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 100%;
@@ -119,12 +119,14 @@
 
 @supports (-webkit-text-stroke: 1px var(--text-stroke)) {
   .card__content::before {
+    text-shadow: none;
     -webkit-text-stroke: 1px var(--text-stroke);
   }
 }
 
 @supports (text-stroke: 1px var(--text-stroke)) {
   .card__content::before {
+    text-shadow: none;
     text-stroke: 1px var(--text-stroke);
   }
 }
@@ -156,10 +158,10 @@
   border: none;
   outline: none;
   cursor: pointer;
-  transition: outline 0.3s ease;
 }
 
 .card__icon-button svg {
+  transition: border 0.3s ease;
   border: 2px solid transparent;
 }
 
@@ -211,7 +213,7 @@
 .button__text {
   position: relative;
   mix-blend-mode: difference;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 90%;
@@ -245,7 +247,7 @@
 .dialog__content {
   display: flex;
   gap: 20px;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   line-height: 150%;
@@ -268,31 +270,31 @@
 
 /*----FILTERs----*/
 
-.first-sprint-start {
+.grayscale {
   filter: grayscale(75%);
 }
 
-.first-sprint-end {
+.saturate {
   filter: saturate(350%);
 }
 
-.second-sprint-start {
+.hueRotate {
   filter: hue-rotate(30deg);
 }
 
-.second-sprint-end {
+.invert {
   filter: invert(75%);
 }
 
-.third-sprint-start {
+.sepia {
   filter: sepia(0.9);
 }
 
-.third-sprint-end {
+.blur {
   filter: blur(10px);
 }
 
-.now {
+.opacity-hueRotate {
   filter: hue-rotate(90deg) blur(2px) opacity(60%);
 }
 
